@@ -1,1 +1,735 @@
-<b>test</b>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitGood | FL Studio Mixing & Mastering Masterclass</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0f1117',
+                        cardbg: '#161922',
+                        cardhover: '#1e222f',
+                        neonblue: '#3b82f6',
+                        neonpurple: '#8b5cf6',
+                        accentglow: 'rgba(139, 92, 246, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Pro Producer Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1117;
+            color: #f3f4f6;
+        }
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Custom scrollbar for immersive DAW studio feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f1117;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #272a37;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+        .glow-effect {
+            box-shadow: 0 0 35px -5px rgba(59, 130, 246, 0.25);
+        }
+        .glow-purple {
+            box-shadow: 0 0 35px -5px rgba(139, 92, 246, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-gray-100 min-h-screen selection:bg-neonblue selection:text-white">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-obsidian/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neonblue to-neonpurple flex items-center justify-center shadow-lg shadow-neonblue/30">
+                    <i class="fa-solid fa-sliders text-white text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-neonblue via-indigo-400 to-neonpurple bg-clip-text text-transparent">GitGood</span>
+                    <span class="block text-[10px] tracking-widest text-gray-400 font-semibold uppercase">FL Studio Masterclass</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#roadmap" class="hover:text-neonblue transition-colors">Masterclass</a>
+                <a href="#plugins" class="hover:text-neonblue transition-colors">Native Plugins</a>
+                <a href="#calculator" class="hover:text-neonblue transition-colors">LUFS Checker</a>
+                <a href="#shortcuts" class="hover:text-neonblue transition-colors">Shortcuts</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#roadmap" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-neonblue to-neonpurple hover:opacity-95 transition-all shadow-md shadow-neonpurple/20">
+                    <i class="fa-solid fa-bolt mr-2"></i> Start Mixing
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2 rounded-lg bg-cardbg border border-gray-800">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardbg border-b border-gray-800 px-6 py-4 space-y-3">
+            <a href="#roadmap" class="block text-gray-300 hover:text-neonblue py-1 font-medium">Masterclass</a>
+            <a href="#plugins" class="block text-gray-300 hover:text-neonblue py-1 font-medium">Native Plugins</a>
+            <a href="#calculator" class="block text-gray-300 hover:text-neonblue py-1 font-medium">LUFS Checker</a>
+            <a href="#shortcuts" class="block text-gray-300 hover:text-neonblue py-1 font-medium">Shortcuts</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 lg:py-28">
+        <!-- Background Glow Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-neonblue/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-neonpurple/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cardbg border border-gray-800 text-xs font-semibold text-neonblue mb-6 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-neonblue animate-pulse"></span>
+                    <span>FL Studio Edition • Pro Mixing & Mastering Blueprint</span>
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                    Level Up Your Sound. <br>
+                    <span class="bg-gradient-to-r from-neonblue via-indigo-400 to-neonpurple bg-clip-text text-transparent">Mix & Master Like a Pro in FL.</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-400 mb-10 font-normal leading-relaxed">
+                    Stop drowning your beats in muddy frequencies and harsh limiters. Master gain staging, dynamic control, spatial routing, and loudness targets entirely inside FL Studio.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#roadmap" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-neonblue to-neonpurple hover:opacity-90 transition-all glow-effect text-center flex items-center justify-center">
+                        <i class="fa-solid fa-headphones mr-2.5"></i> Explore Roadmap
+                    </a>
+                    <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-gray-300 bg-cardbg hover:bg-cardhover border border-gray-800 transition-all text-center flex items-center justify-center">
+                        <i class="fa-solid fa-calculator mr-2.5 text-neonblue"></i> LUFS Target Tool
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Producer Badges / Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                <div class="bg-cardbg/80 backdrop-blur border border-gray-800/80 p-5 rounded-2xl text-center">
+                    <div class="text-neonblue text-2xl font-black mb-1">-6 dB</div>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Optimal Headroom</div>
+                </div>
+                <div class="bg-cardbg/80 backdrop-blur border border-gray-800/80 p-5 rounded-2xl text-center">
+                    <div class="text-neonpurple text-2xl font-black mb-1">-14 LUFS</div>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Streaming Target</div>
+                </div>
+                <div class="bg-cardbg/80 backdrop-blur border border-gray-800/80 p-5 rounded-2xl text-center">
+                    <div class="text-neonblue text-2xl font-black mb-1">6 Steps</div>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Complete Blueprint</div>
+                </div>
+                <div class="bg-cardbg/80 backdrop-blur border border-gray-800/80 p-5 rounded-2xl text-center">
+                    <div class="text-neonpurple text-2xl font-black mb-1">100% Native</div>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">FL Studio Plugins</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Mixing & Mastering Roadmap -->
+    <section id="roadmap" class="py-20 bg-[#0c0e13] border-t border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Step-by-Step Mixing & Mastering Roadmap</h2>
+                <p class="text-gray-400">Click any step below to expand detailed pro tips, FL Studio native plugin choices, and common mistakes to avoid.</p>
+            </div>
+
+            <div class="space-y-6 max-w-4xl mx-auto" id="roadmap-container">
+
+                <!-- Step 1 -->
+                <div class="roadmap-card bg-cardbg border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-neonblue/50">
+                    <button class="w-full p-6 text-left flex items-center justify-between focus:outline-none" onclick="toggleStep(1)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-neonblue/10 border border-neonblue/30 text-neonblue flex items-center justify-center font-bold text-lg">01</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Gain Staging & Headroom</h3>
+                                <p class="text-xs sm:text-sm text-gray-400">Keep individual mixer insert peaks around -18dB to -12dB, master peak around -6dB.</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300" id="icon-1"></i>
+                    </button>
+                    <div id="content-1" class="hidden px-6 pb-6 pt-2 border-t border-gray-800/60 text-gray-300 space-y-4">
+                        <p class="text-sm leading-relaxed">Gain staging is the foundation of a clean mix. If your faders are maxed out before you even touch a plugin, your plugins (especially emulated compressors and saturators) will clip internally and sound harsh.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-neonblue uppercase tracking-wider mb-2"><i class="fa-solid fa-circle-check mr-1.5"></i> FL Studio Pro Tip</h4>
+                                <p class="text-xs text-gray-300">Use the channel volume knob or clip gain inside the Playlist audio clips to turn down loud samples before they hit the mixer insert. Use <strong>Fruity Peak Meter</strong> or <strong>Wave Candy</strong> to monitor true levels.</p>
+                            </div>
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-red-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Common Mistake</h4>
+                                <p class="text-xs text-gray-300">Pushing the Master fader down to fix clipping. Fix your mix balance in the multi-track mixer instead; keep the Master fader at 0.0dB until the final limiting stage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="roadmap-card bg-cardbg border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-neonblue/50">
+                    <button class="w-full p-6 text-left flex items-center justify-between focus:outline-none" onclick="toggleStep(2)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-neonblue/10 border border-neonblue/30 text-neonblue flex items-center justify-center font-bold text-lg">02</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">EQ & Frequency Balancing</h3>
+                                <p class="text-xs sm:text-sm text-gray-400">Clean up muddy low-mids, carve out space for vocals, and manage high-end harshness.</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300" id="icon-2"></i>
+                    </button>
+                    <div id="content-2" class="hidden px-6 pb-6 pt-2 border-t border-gray-800/60 text-gray-300 space-y-4">
+                        <p class="text-sm leading-relaxed">Every instrument needs its own frequency home. Sub-bass owns 20Hz-60Hz, kick punch around 80Hz-120Hz, vocals shine in 2kHz-5kHz. High-pass filter (HPF) non-bass instruments below 30Hz-80Hz to remove inaudible rumble.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-neonblue uppercase tracking-wider mb-2"><i class="fa-solid fa-circle-check mr-1.5"></i> FL Studio Pro Tip</h4>
+                                <p class="text-xs text-gray-300">Use <strong>Parametric EQ 2</strong> in Linear Phase mode or High quality setting. Right-click bands to change filter types (e.g., 40dB/oct slope for clean low cuts). Use the spectral analyzer view to spot resonant frequencies.</p>
+                            </div>
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-red-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Common Mistake</h4>
+                                <p class="text-xs text-gray-300">Over-equalizing in solo mode. Always mix in context with the rest of the beat so you don't carve away essential body.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="roadmap-card bg-cardbg border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-neonblue/50">
+                    <button class="w-full p-6 text-left flex items-center justify-between focus:outline-none" onclick="toggleStep(3)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-neonpurple/10 border border-neonpurple/30 text-neonpurple flex items-center justify-center font-bold text-lg">03</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Compression & Dynamics</h3>
+                                <p class="text-xs sm:text-sm text-gray-400">Tame unruly peaks, glue drums together, and maintain consistent vocal energy.</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300" id="icon-3"></i>
+                    </button>
+                    <div id="content-3" class="hidden px-6 pb-6 pt-2 border-t border-gray-800/60 text-gray-300 space-y-4">
+                        <p class="text-sm leading-relaxed">Compression reduces dynamic range by turning down loud transients. Use slower attack times (20ms-30ms) on drums to let the initial punch through, and faster release times for rhythmic pumping control.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-neonpurple uppercase tracking-wider mb-2"><i class="fa-solid fa-circle-check mr-1.5"></i> FL Studio Pro Tip</h4>
+                                <p class="text-xs text-gray-300">Try parallel compression: route your drum bus to a send track, crush it heavily with <strong>Fruity Compressor</strong> or <strong>Maximus</strong> (using aggressive downward compression), and blend it quietly under the dry signal for thickness.</p>
+                            </div>
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-red-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Common Mistake</h4>
+                                <p class="text-xs text-gray-300">Over-compressing every single insert. If an instrument already has stable volume, it doesn't need compression.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="roadmap-card bg-cardbg border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-neonblue/50">
+                    <button class="w-full p-6 text-left flex items-center justify-between focus:outline-none" onclick="toggleStep(4)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-neonpurple/10 border border-neonpurple/30 text-neonpurple flex items-center justify-center font-bold text-lg">04</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Saturation & Harmonic Color</h3>
+                                <p class="text-xs sm:text-sm text-gray-400">Add subtle warmth, tape saturation, and upper harmonics to help sounds cut through laptop speakers.</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300" id="icon-4"></i>
+                    </button>
+                    <div id="content-4" class="hidden px-6 pb-6 pt-2 border-t border-gray-800/60 text-gray-300 space-y-4">
+                        <p class="text-sm leading-relaxed">Digital audio can sometimes sound sterile. Saturation introduces pleasant harmonic distortion that thickens the sound and tricks the human ear into perceiving higher loudness without increasing peak levels.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-neonpurple uppercase tracking-wider mb-2"><i class="fa-solid fa-circle-check mr-1.5"></i> FL Studio Pro Tip</h4>
+                                <p class="text-xs text-gray-300">Use <strong>WaveShaper</strong> for custom distortion curves on 808s and synths. Keep the curve slightly soft-clipped near the top edges for warm tube character. <strong>Fruity Waveshaper</strong> or <strong>Hardcore</strong> distorsion modules work wonders.</p>
+                            </div>
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-red-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Common Mistake</h4>
+                                <p class="text-xs text-gray-300">Adding heavy distortion on the master bus without monitoring inter-sample peaks. Keep saturation subtle on instrument busses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="roadmap-card bg-cardbg border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-neonblue/50">
+                    <button class="w-full p-6 text-left flex items-center justify-between focus:outline-none" onclick="toggleStep(5)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-neonblue/10 border border-neonblue/30 text-neonblue flex items-center justify-center font-bold text-lg">05</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Spatial Effects (Reverb & Delay Routing)</h3>
+                                <p class="text-xs sm:text-sm text-gray-400">Create depth, width, and 3D soundstages using dedicated send/return mixer tracks.</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300" id="icon-5"></i>
+                    </button>
+                    <div id="content-5" class="hidden px-6 pb-6 pt-2 border-t border-gray-800/60 text-gray-300 space-y-4">
+                        <p class="text-sm leading-relaxed">Never put heavy reverb directly as an insert on every instrument (unless going for a special Lo-Fi aesthetic). Instead, route multiple instruments to a dedicated Reverb Send track to unify your mix space.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-neonblue uppercase tracking-wider mb-2"><i class="fa-solid fa-circle-check mr-1.5"></i> FL Studio Pro Tip</h4>
+                                <p class="text-xs text-gray-300">Place an EQ *after* your reverb plugin on your send track and high-pass the reverb at 300Hz and low-pass at 8kHz. This keeps your low-end clean and prevents muddy reverb wash.</p>
+                            </div>
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-red-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Common Mistake</h4>
+                                <p class="text-xs text-gray-300">Putting delays and reverbs on low-end elements like Kicks and 808s, which smears the stereo image and destroys punch.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="roadmap-card bg-cardbg border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-neonblue/50">
+                    <button class="w-full p-6 text-left flex items-center justify-between focus:outline-none" onclick="toggleStep(6)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-neonpurple/10 border border-neonpurple/30 text-neonpurple flex items-center justify-center font-bold text-lg">06</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Mastering & Limiting</h3>
+                                <p class="text-xs sm:text-sm text-gray-400">Maximize commercial loudness, check mono compatibility, and export pristine WAV files.</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300" id="icon-6"></i>
+                    </button>
+                    <div id="content-6" class="hidden px-6 pb-6 pt-2 border-t border-gray-800/60 text-gray-300 space-y-4">
+                        <p class="text-sm leading-relaxed">Mastering is the final polish. Use subtle bus EQ, multi-band compression, and a transparent brickwall limiter to achieve competitive streaming loudness (-14 to -9 LUFS) without crushing transients.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-neonpurple uppercase tracking-wider mb-2"><i class="fa-solid fa-circle-check mr-1.5"></i> FL Studio Pro Tip</h4>
+                                <p class="text-xs text-gray-300">Master with FL Studio's powerhouse plugin <strong>Maximus</strong>. Use the default mastering presets or gently compress 3 bands with a Ceiling set to -1.0 dB True Peak to prevent clipping on Spotify or Apple Music.</p>
+                            </div>
+                            <div class="bg-obsidian p-4 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold text-red-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Common Mistake</h4>
+                                <p class="text-xs text-gray-300">Slamming the limiter threshold down by -10dB. If your mix lacks energy, fix the balance in the mix rather than destroying it with a heavy limiter.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Plugin & Tool Cheat Sheet -->
+    <section id="plugins" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Native FL Studio Plugin Cheat Sheet</h2>
+                <p class="text-gray-400">You don't need expensive VSTs to make a Billboard hit. Filter FL Studio's powerful stock plugins below.</p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-12" id="plugin-filters">
+                <button onclick="filterPlugins('all')" class="plugin-filter-btn px-5 py-2.5 rounded-xl font-semibold text-sm bg-neonblue text-white shadow-md transition-all">All Plugins</button>
+                <button onclick="filterPlugins('eq')" class="plugin-filter-btn px-5 py-2.5 rounded-xl font-semibold text-sm bg-cardbg text-gray-300 hover:text-white border border-gray-800 transition-all">EQ & Filters</button>
+                <button onclick="filterPlugins('dynamics')" class="plugin-filter-btn px-5 py-2.5 rounded-xl font-semibold text-sm bg-cardbg text-gray-300 hover:text-white border border-gray-800 transition-all">Dynamics</button>
+                <button onclick="filterPlugins('saturation')" class="plugin-filter-btn px-5 py-2.5 rounded-xl font-semibold text-sm bg-cardbg text-gray-300 hover:text-white border border-gray-800 transition-all">Saturation & Distortion</button>
+                <button onclick="filterPlugins('spatial')" class="plugin-filter-btn px-5 py-2.5 rounded-xl font-semibold text-sm bg-cardbg text-gray-300 hover:text-white border border-gray-800 transition-all">Spatial & Time</button>
+                <button onclick="filterPlugins('mastering')" class="plugin-filter-btn px-5 py-2.5 rounded-xl font-semibold text-sm bg-cardbg text-gray-300 hover:text-white border border-gray-800 transition-all">Mastering & Analysis</button>
+            </div>
+
+            <!-- Plugin Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="plugin-grid">
+
+                <!-- Plugin Card 1 -->
+                <div class="plugin-card bg-cardbg border border-gray-800 rounded-2xl p-6 transition-all hover:border-neonblue/50 flex flex-col justify-between" data-category="eq">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-neonblue/10 text-neonblue text-xs font-bold uppercase tracking-wider">EQ & Filters</span>
+                            <span class="text-xs font-mono text-gray-400">Stock Essential</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Fruity Parametric EQ 2</h3>
+                        <p class="text-sm text-gray-400 mb-6">A high-precision 7-band parametric equalizer with zero latency, low CPU usage, and crystal clear visual spectral analyzer.</p>
+                    </div>
+                    <div class="bg-obsidian p-4 rounded-xl border border-gray-800 space-y-2">
+                        <div class="text-xs font-bold text-gray-300 uppercase tracking-wider">Pro Settings Guide:</div>
+                        <p class="text-xs text-gray-400">Set quality to <span class="text-neonblue font-mono">High (16x)</span> for mastering. Use band 1 as 40dB/oct High-Pass filter and band 7 as Low-Pass filter.</p>
+                    </div>
+                </div>
+
+                <!-- Plugin Card 2 -->
+                <div class="plugin-card bg-cardbg border border-gray-800 rounded-2xl p-6 transition-all hover:border-neonpurple/50 flex flex-col justify-between" data-category="dynamics">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-neonpurple/10 text-neonpurple text-xs font-bold uppercase tracking-wider">Dynamics</span>
+                            <span class="text-xs font-mono text-gray-400">Stock Essential</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Maximus</h3>
+                        <p class="text-sm text-gray-400 mb-6">A multi-band compressor, limiter, and expander powerhouse. Great for glue compression and final master limiting.</p>
+                    </div>
+                    <div class="bg-obsidian p-4 rounded-xl border border-gray-800 space-y-2">
+                        <div class="text-xs font-bold text-gray-300 uppercase tracking-wider">Pro Settings Guide:</div>
+                        <p class="text-xs text-gray-400">Use preset <span class="text-neonpurple font-mono">Master RMS</span> or <span class="text-neonpurple font-mono">Clear Master</span>. Keep ceiling at -1.0 dB for streaming platforms.</p>
+                    </div>
+                </div>
+
+                <!-- Plugin Card 3 -->
+                <div class="plugin-card bg-cardbg border border-gray-800 rounded-2xl p-6 transition-all hover:border-neonblue/50 flex flex-col justify-between" data-category="saturation">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-neonblue/10 text-neonblue text-xs font-bold uppercase tracking-wider">Saturation</span>
+                            <span class="text-xs font-mono text-gray-400">Stock Essential</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">WaveShaper</h3>
+                        <p class="text-sm text-gray-400 mb-6">A wave-shaping distortion tool that lets you draw custom input/output transfer curves for warm saturation and grit.</p>
+                    </div>
+                    <div class="bg-obsidian p-4 rounded-xl border border-gray-800 space-y-2">
+                        <div class="text-xs font-bold text-gray-300 uppercase tracking-wider">Pro Settings Guide:</div>
+                        <p class="text-xs text-gray-400">Bend the center line slightly upward into an 'S' curve to add subtle tube warmth to 808 sub bass.</p>
+                    </div>
+                </div>
+
+                <!-- Plugin Card 4 -->
+                <div class="plugin-card bg-cardbg border border-gray-800 rounded-2xl p-6 transition-all hover:border-neonpurple/50 flex flex-col justify-between" data-category="spatial">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-neonpurple/10 text-neonpurple text-xs font-bold uppercase tracking-wider">Spatial & Time</span>
+                            <span class="text-xs font-mono text-gray-400">Stock Essential</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Fruity Reverb 2</h3>
+                        <p class="text-sm text-gray-400 mb-6">A lush algorithmic reverb featuring built-in low cut, high cut, and early reflection controls for creating deep mix spaces.</p>
+                    </div>
+                    <div class="bg-obsidian p-4 rounded-xl border border-gray-800 space-y-2">
+                        <div class="text-xs font-bold text-gray-300 uppercase tracking-wider">Pro Settings Guide:</div>
+                        <p class="text-xs text-gray-400">Put on a Send track. Turn up <span class="text-neonpurple font-mono">Low Cut</span> knob to 350Hz to keep sub frequencies clean.</p>
+                    </div>
+                </div>
+
+                <!-- Plugin Card 5 -->
+                <div class="plugin-card bg-cardbg border border-gray-800 rounded-2xl p-6 transition-all hover:border-neonblue/50 flex flex-col justify-between" data-category="mastering">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-neonblue/10 text-neonblue text-xs font-bold uppercase tracking-wider">Analysis</span>
+                            <span class="text-xs font-mono text-gray-400">Stock Essential</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Wave Candy</h3>
+                        <p class="text-sm text-gray-400 mb-6">A flexible visualization tool including spectrum analyzer, oscilloscope, stereo meter, and peak meter.</p>
+                    </div>
+                    <div class="bg-obsidian p-4 rounded-xl border border-gray-800 space-y-2">
+                        <div class="text-xs font-bold text-gray-300 uppercase tracking-wider">Pro Settings Guide:</div>
+                        <p class="text-xs text-gray-400">Switch mode to <span class="text-neonblue font-mono">Vectorscope</span> to check phase correlation and stereo width issues instantly.</p>
+                    </div>
+                </div>
+
+                <!-- Plugin Card 6 -->
+                <div class="plugin-card bg-cardbg border border-gray-800 rounded-2xl p-6 transition-all hover:border-neonpurple/50 flex flex-col justify-between" data-category="dynamics">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-neonpurple/10 text-neonpurple text-xs font-bold uppercase tracking-wider">Dynamics</span>
+                            <span class="text-xs font-mono text-gray-400">Stock Essential</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Fruity Limiter</h3>
+                        <p class="text-sm text-gray-400 mb-6">A dual-function plugin featuring a compressor on the left and a noise gate & transparent brickwall limiter on the right.</p>
+                    </div>
+                    <div class="bg-obsidian p-4 rounded-xl border border-gray-800 space-y-2">
+                        <div class="text-xs font-bold text-gray-300 uppercase tracking-wider">Pro Settings Guide:</div>
+                        <p class="text-xs text-gray-400">Set ceiling to <span class="text-neonpurple font-mono">-1.0dB</span> and adjust gain until you get 2-4dB of gain reduction on drops.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive LUFS & Headroom Calculator / Target Checker -->
+    <section id="calculator" class="py-20 bg-[#0c0e13] border-t border-b border-gray-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">LUFS & Headroom Target Checker</h2>
+                <p class="text-gray-400">Select your destination platform to see industry-standard LUFS targets and True Peak limits so your track never gets squashed by platform normalization.</p>
+            </div>
+
+            <div class="bg-cardbg border border-gray-800 rounded-3xl p-6 sm:p-10 shadow-xl">
+                <!-- Platform Selector Tabs -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" id="platform-tabs">
+                    <button onclick="selectPlatform('spotify')" id="btn-spotify" class="platform-btn p-4 rounded-2xl border border-neonblue bg-neonblue/10 text-white font-bold text-sm flex flex-col items-center justify-center transition-all">
+                        <i class="fa-brands fa-spotify text-neonblue text-2xl mb-2">></i> Spotify
+                    </button>
+                    <button onclick="selectPlatform('apple')" id="btn-apple" class="platform-btn p-4 rounded-2xl border border-gray-800 bg-obsidian text-gray-400 hover:text-white font-bold text-sm flex flex-col items-center justify-center transition-all">
+                        <i class="fa-brands fa-apple text-2xl mb-2 text-red-400"></i> Apple Music
+                    </button>
+                    <button onclick="selectPlatform('youtube')" id="btn-youtube" class="platform-btn p-4 rounded-2xl border border-gray-800 bg-obsidian text-gray-400 hover:text-white font-bold text-sm flex flex-col items-center justify-center transition-all">
+                        <i class="fa-brands fa-youtube text-2xl mb-2 text-red-500"></i> YouTube
+                    </button>
+                    <button onclick="selectPlatform('soundcloud')" id="btn-soundcloud" class="platform-btn p-4 rounded-2xl border border-gray-800 bg-obsidian text-gray-400 hover:text-white font-bold text-sm flex flex-col items-center justify-center transition-all">
+                        <i class="fa-brands fa-soundcloud text-2xl mb-2 text-orange-500"></i> SoundCloud
+                    </button>
+                </div>
+
+                <!-- Platform Details Display -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-obsidian p-6 rounded-2xl border border-gray-800 text-center">
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Target Integrated LUFS</div>
+                        <div id="target-lufs" class="text-3xl font-black text-neonblue code-font mt-2">-14 LUFS</div>
+                        <p class="text-xs text-gray-500 mt-2">Loudness normalization standard</p>
+                    </div>
+                    <div class="bg-obsidian p-6 rounded-2xl border border-gray-800 text-center">
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Max True Peak Limit</div>
+                        <div id="target-peak" class="text-3xl font-black text-neonpurple code-font mt-2">-1.0 dBTP</div>
+                        <p class="text-xs text-gray-500 mt-2">Prevents inter-sample clipping</p>
+                    </div>
+                    <div class="bg-obsidian p-6 rounded-2xl border border-gray-800 text-center">
+                        <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Export Headroom</div>
+                        <div id="target-headroom" class="text-3xl font-black text-emerald-400 code-font mt-2">-6.0 dB</div>
+                        <p class="text-xs text-gray-500 mt-2">Recommended pre-master peak</p>
+                    </div>
+                </div>
+
+                <!-- Interactive Test Simulator Bar -->
+                <div class="bg-obsidian p-6 rounded-2xl border border-gray-800 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-bold text-white"><i class="fa-solid fa-sliders text-neonblue mr-2"></i> FL Studio Master Output Simulator</span>
+                        <span id="sim-status" class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Optimal Loudness</span>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs font-mono text-gray-400 mb-2">
+                            <span>Current Master LUFS: <strong id="sim-lufs-val" class="text-white">-14.0 LUFS</strong></span>
+                            <span>Target Range: <strong id="sim-range-label" class="text-neonblue">-14 LUFS</strong></span>
+                        </div>
+                        <input type="range" id="lufs-slider" min="-24" max="-6" step="0.5" value="-14" class="w-full h-2 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-neonblue" oninput="updateSimulator(this.value)">
+                    </div>
+                    <p id="sim-feedback" class="text-xs text-gray-400 italic">Your track is dialed in perfectly for this streaming platform. No excessive crushing or quiet normalization penalty!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FL Studio Hotkeys & Workflow Shortcuts Quick Reference -->
+    <section id="shortcuts" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">FL Studio Workflow Shortcuts</h2>
+                <p class="text-gray-400">Speed up your workflow instantly. Use the search bar below to find essential mixer, playlist, and piano roll shortcuts.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Search Bar -->
+                <div class="relative mb-8">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-gray-400">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" id="shortcut-search" onkeyup="searchShortcuts()" placeholder="Search shortcuts (e.g., Mixer, Clone, Piano roll, Mute)..." class="w-full bg-cardbg border border-gray-800 rounded-2xl pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-neonblue transition-all">
+                </div>
+
+                <!-- Shortcuts Table -->
+                <div class="bg-cardbg border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse" id="shortcuts-table">
+                            <thead>
+                                <tr class="bg-obsidian border-b border-gray-800 text-xs uppercase font-bold text-gray-400 tracking-wider">
+                                    <th class="py-4 px-6">Action / Feature</th>
+                                    <th class="py-4 px-6">FL Studio Shortcut (Windows)</th>
+                                    <th class="py-4 px-6">Category</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-800/60 text-sm text-gray-300">
+                                <tr class="hover:bg-cardhover transition-colors shortcut-row" data-category="general">
+                                    <td class="py-4 px-6 font-medium text-white">Quick Quick Assign to Mixer</td>
+                                    <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-lg bg-obsidian border border-gray-800 code-font text-neonblue font-bold">Ctrl + L</span></td>
+                                    <td class="py-4 px-6 text-gray-400">Channel Rack</td>
+                                </tr>
+                                <tr class="hover:bg-cardhover transition-colors shortcut-row" data-category="general">
+                                    <td class="py-4 px-6 font-medium text-white">Open Piano Roll</td>
+                                    <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-lg bg-obsidian border border-gray-800 code-font text-neonblue font-bold">Alt + P</span> or Double Click</td>
+                                    <td class="py-4 px-6 text-gray-400">Channel Rack</td>
+                                </tr>
+                                <tr class="hover:bg-cardhover transition-colors shortcut-row" data-category="mixer">
+                                    <td class="py-4 px-6 font-medium text-white">Route Selected to Free Mixer Track</td>
+                                    <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-lg bg-obsidian border border-gray-800 code-font text-neonpurple font-bold">Ctrl + Shift + L</span></td>
+                                    <td class="py-4 px-6 text-gray-400">Mixer</td>
+                                </tr>
+                                <tr class="hover:bg-cardhover transition-colors shortcut-row" data-category="playlist">
+                                    <td class="py-4 px-6 font-medium text-white">Slice Tool (Cut Audio / MIDI)</td>
+                                    <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-lg bg-obsidian border border-gray-800 code-font text-neonblue font-bold">C</span></td>
+                                    <td class="py-4 px-6 text-gray-400">Playlist</td>
+                                </tr>
+                                <tr class="hover:bg-cardhover transition-colors shortcut-row" data-category="playlist">
+                                    <td class="py-4 px-6 font-medium text-white">Slip Edit Audio Clip</td>
+                                    <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-lg bg-obsidian border border-gray-800 code-font text-neonpurple font-bold">Shift + Drag Edge</span></td>
+                                    <td class="py-4 px-6 text-gray-400">Playlist</td>
+                                </tr>
+                                <tr class="hover:bg-cardhover transition-colors shortcut-row" data-category="general">
+                                    <td class="py-4 px-6 font-medium text-white">Render / Export Audio</td>
+                                    <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-lg bg-obsidian border border-gray-800 code-font text-neonblue font-bold">Ctrl + R</span></td>
+                                    <td class="py-4 px-6 text-gray-400">General</td>
+                                </tr>
+                                <tr class="hover:bg-cardhover transition-colors shortcut-row" data-category="general">
+                                    <td class="py-4 px-6 font-medium text-white">Consolidate Playlist Selection to Audio</td>
+                                    <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-lg bg-obsidian border border-gray-800 code-font text-neonpurple font-bold">Ctrl + Alt + C</span></td>
+                                    <td class="py-4 px-6 text-gray-400">Playlist / CPU</td>
+                                </tr>
+                                <tr class="hover:bg-cardhover transition-colors shortcut-row" data-category="mixer">
+                                    <td class="py-4 px-6 font-medium text-white">Reset Mixer Track Volume to 0.0dB</td>
+                                    <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-lg bg-obsidian border border-gray-800 code-font text-neonblue font-bold">Alt + Click Fader</span></td>
+                                    <td class="py-4 px-6 text-gray-400">Mixer</td>
+                                </tr>
+                                <tr class="hover:bg-cardhover transition-colors shortcut-row" data-category="general">
+                                    <td class="py-4 px-6 font-medium text-white">Quick Clone Selected Channel</td>
+                                    <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-lg bg-obsidian border border-gray-800 code-font text-neonpurple font-bold">Shift + C</span></td>
+                                    <td class="py-4 px-6 text-gray-400">Channel Rack</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cardbg border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-neonblue to-neonpurple flex items-center justify-center">
+                    <i class="fa-solid fa-sliders text-white text-xs"></i>
+                </div>
+                <span class="text-lg font-black tracking-wider text-white">GitGood</span>
+            </div>
+            <p class="text-xs text-gray-400 text-center">Built for music producers who want pristine mixes and industry-ready masters in FL Studio.</p>
+            <div class="flex items-center space-x-4 text-gray-400">
+                <a href="#roadmap" class="hover:text-neonblue text-xs transition-colors">Masterclass</a>
+                <a href="#plugins" class="hover:text-neonblue text-xs transition-colors">Plugins</a>
+                <a href="#calculator" class="hover:text-neonblue text-xs transition-colors">LUFS</a>
+                <a href="#shortcuts" class="hover:text-neonblue text-xs transition-colors">Shortcuts</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Roadmap Accordion Toggle Function
+        function toggleStep(stepNumber) {
+            const content = document.getElementById(`content-${stepNumber}`);
+            const icon = document.getElementById(`icon-${stepNumber}`);
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Plugin Filter Function
+        function filterPlugins(category) {
+            const buttons = document.querySelectorAll('.plugin-filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-neonblue', 'text-white', 'shadow-md');
+                btn.classList.add('bg-cardbg', 'text-gray-300', 'border', 'border-gray-800');
+            });
+
+            event.target.classList.remove('bg-cardbg', 'text-gray-300', 'border', 'border-gray-800');
+            event.target.classList.add('bg-neonblue', 'text-white', 'shadow-md');
+
+            const cards = document.querySelectorAll('.plugin-grid .plugin-card, #plugin-grid .plugin-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // LUFS Platform Data & Selector
+        const platformData = {
+            spotify: { lufs: '-14 LUFS', peak: '-1.0 dBTP', headroom: '-6.0 dB', targetNum: -14, desc: 'Spotify normalizes tracks to -14 LUFS. If your master is louder (e.g. -9 LUFS), Spotify will turn it down.' },
+            apple: { lufs: '-16 LUFS', peak: '-1.0 dBTP', headroom: '-6.0 dB', targetNum: -16, desc: 'Apple Music uses Sound Check set to -16 LUFS. Dynamic un-squashed mixes shine best here.' },
+            youtube: { lufs: '-14 LUFS', peak: '-1.0 dBTP', headroom: '-6.0 dB', targetNum: -14, desc: 'YouTube normalizes content to -14 LUFS integrated. Video game soundtracks and beat uploads match this.' },
+            soundcloud: { lufs: '-9 LUFS', peak: '-0.5 dBTP', headroom: '-4.0 dB', targetNum: -9, desc: 'SoundCloud does not normalize loudness. Many underground beatmakers push mixes to -9 LUFS for maximum loudness on uploads.' }
+        };
+
+        let currentPlatform = 'spotify';
+
+        function selectPlatform(platformKey) {
+            currentPlatform = platformKey;
+            const data = platformData[platformKey];
+
+            // Update button styles
+            document.querySelectorAll('.platform-btn').forEach(btn => {
+                btn.classList.remove('border-neonblue', 'bg-neonblue/10', 'text-white');
+                btn.classList.add('border-gray-800', 'bg-obsidian', 'text-gray-400');
+            });
+
+            const activeBtn = document.getElementById(`btn-${platformKey}`);
+            activeBtn.classList.remove('border-gray-800', 'bg-obsidian', 'text-gray-400');
+            activeBtn.classList.add('border-neonblue', 'bg-neonblue/10', 'text-white');
+
+            // Update stats
+            document.getElementById('target-lufs').innerText = data.lufs;
+            document.getElementById('target-peak').innerText = data.peak;
+            document.getElementById('target-headroom').innerText = data.headroom;
+
+            // Update slider default
+            const slider = document.getElementById('lufs-slider');
+            slider.value = data.targetNum;
+            updateSimulator(data.targetNum);
+        }
+
+        // Simulator Logic
+        function updateSimulator(val) {
+            const numericVal = parseFloat(val);
+            document.getElementById('sim-lufs-val').innerText = numericVal.toFixed(1) + ' LUFS';
+            
+            const target = platformData[currentPlatform].targetNum;
+            document.getElementById('sim-range-label').innerText = target + ' LUFS';
+
+            const statusBadge = document.getElementById('sim-status');
+            const feedback = document.getElementById('sim-feedback');
+
+            const diff = numericVal - target;
+
+            if (Math.abs(diff) <= 1.0) {
+                statusBadge.className = 'px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+                statusBadge.innerText = 'Optimal Loudness';
+                feedback.innerText = 'Your track is dialed in perfectly for ' + currentPlatform.toUpperCase() + '. No platform normalization penalty or squashed transients!';
+            } else if (diff > 1.0) {
+                statusBadge.className = 'px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20';
+                statusBadge.innerText = 'Will Be Turned Down';
+                feedback.innerText = 'Warning: Your master is too loud (' + numericVal + ' LUFS) compared to the ' + target + ' LUFS target. The platform will automatically turn your mix down.';
+            } else {
+                statusBadge.className = 'px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20';
+                statusBadge.innerText = 'Slightly Quiet';
+                feedback.innerText = 'Your mix is quieter than the target loudness. It will sound clean and dynamic, but might lack perceived punch next to commercial tracks.';
+            }
+        }
+
+        // Shortcuts Search Filter
+        function searchShortcuts() {
+            const query = document.getElementById('shortcut-search').value.toLowerCase();
+            const rows = document.querySelectorAll('.shortcut-row');
+
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
